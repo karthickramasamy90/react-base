@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Container, Row, Col, FormLabel, Button } from "react-bootstrap";
 
 const LocalStorageComponent = () => {
     const [message, setMessage] = useState("");
@@ -18,24 +19,30 @@ const LocalStorageComponent = () => {
       localStorage.setItem(selectedOption, message)
   }
     return (
-        <div>
-            <div>
-              <label>Select Message type</label>
-              <select name='selectedOption' placeholder="Select Message" onChange={handleOnChange}>
-                <option>Select Message</option>
-                <option value="success">Success</option>
-                <option value="failure">Failure</option>
-                <option value="warning">Warning</option>
-              </select>
-            </div>
-  
-          <div>
-            <label>Please enter your message here</label>
-            <input type="text" name='message' onChange={handleMessage} />
-  
-            <button type="submit" onClick={handleSubmit}>Submit </button>
-          </div>
-        </div>
+        <>
+            <Container>
+                <Row>
+                    <Col md="12">
+                        <FormLabel>Select Message type: </FormLabel>
+                        <select name='selectedOption' placeholder="Select Message" onChange={handleOnChange}>
+                            <option>Select Message</option>
+                            <option value="success">Success</option>
+                            <option value="failure">Failure</option>
+                            <option value="warning">Warning</option>
+                        </select>
+                    </Col>
+            
+                    <Col md="12">
+                        <FormLabel>Please enter your message here: </FormLabel>
+                        <input type="text" name='message' onChange={handleMessage} />
+                    </Col>
+
+                    <Col md="12">
+                        <Button type="submit" onClick={handleSubmit}>Submit </Button>
+                    </Col>
+                </Row>
+            </Container>
+        </>
     );
   }
 

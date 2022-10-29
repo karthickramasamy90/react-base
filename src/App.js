@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Login from './Login';
 import SignUp from './SignUp';
+import Header from "./Header";
 import Dashboard from './Dashboard';
 import PropsDrilling from './PropsDrilling';
 import PropsNonDrilling from "./PropsNonDrilling";
@@ -13,6 +14,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <Header/>
         <Routes>
           <Route exact path='/' element={<Login />} />
           <Route exact path='/login' element={<Login />} />
