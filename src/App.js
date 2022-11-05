@@ -9,6 +9,8 @@ import Dashboard from './Dashboard';
 import PropsDrilling from './PropsDrilling';
 import PropsNonDrilling from "./PropsNonDrilling";
 import LocalStorage from "./LocalStorage";
+import Game from "./Game";
+import Products from './Products';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           <Route exact path='/propsdrilling' element={<PropsDrilling />} />
           <Route exact path='/propsnondrilling' element={<PropsNonDrilling />} />
           <Route exact path="/localstorage" element={<LocalStorage />} />
+          <Route exact path="/games" element={<Game />} />
+          <Route exact path="/products" element={<Products />} />
         </Routes>
       </Router>
     </div>
